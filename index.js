@@ -8,6 +8,7 @@ import authRouter from "./routes/auth.route.js";
 import subscriptionRouter from "./routes/subscription.route.js";
 import userRouter from "./routes/user.routes.js";
 import errorMiddleware from "./middleware/error.middleware.js";
+import arcjetMiddleware from "./middleware/arcjet.middleware.js";
 
 
 const app= express();
@@ -16,6 +17,7 @@ const app= express();
 app.use(express.json());
 app.use(cookieParser())
 app.use(errorMiddleware);
+app.use(arcjetMiddleware)
 
 app.get("/",(req,res)=>{
     res.send("hey working on subscription tracker backend api");
