@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Netflix Premium",
+    "price": 1200,
+    "currency": "pkr",
+    "category": "entertainment"
+  },
+  {
+    "name": "Spotify Family",
+    "price": 800,
+    "currency": "pkr",
+    "category": "music"
+  },
+  {
+    "name": "ESPN Sports",
+    "price": 500,
+    "currency": "usd",
+    "category": "sports"
+  }
+]

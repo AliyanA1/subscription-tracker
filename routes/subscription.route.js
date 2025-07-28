@@ -1,13 +1,15 @@
 import { Router } from "express";
+import { allSubscription, createSubscription } from "../controllers/subscription.controller.js";
+import { userMiddleware } from "../middleware/user.middleware.js";
 
 const subscriptionRouter=Router();
+subscriptionRouter.use(userMiddleware);
 
-
-subscriptionRouter.get("/", (req,res)=> res.send("here is all the list of subscription"))
+subscriptionRouter.get("/", allSubscription);
 
 subscriptionRouter.get("/:id", (req,res)=> res.send("get subscription details"))
 
-subscriptionRouter.post("/", (req,res)=> res.send("you activated the subscription of this..."))
+subscriptionRouter.post("/", createSubscription);
 
 subscriptionRouter.put("/:id", (req,res)=> res.send("update the subscription"))
 
