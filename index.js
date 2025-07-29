@@ -9,6 +9,7 @@ import subscriptionRouter from "./routes/subscription.route.js";
 import userRouter from "./routes/user.routes.js";
 import errorMiddleware from "./middleware/error.middleware.js";
 import arcjetMiddleware from "./middleware/arcjet.middleware.js";
+import workFlow from "./routes/workFlow.route.js";
 
 
 const app= express();
@@ -25,6 +26,7 @@ app.get("/",(req,res)=>{
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/subscription", subscriptionRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/workflows", workFlow)
 
 app.listen(PORT, async()=>{
     console.log(`server is listen on the Port:http://localhost:${3000}`)
