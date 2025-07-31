@@ -3,13 +3,14 @@ import {createRequire} from "module";
 const require=createRequire(import.meta.url);
 const {serve}=require("@upstash/workflow/express");
 import subscriptionModel from "../models/subscription.model.js";
-// import { sendReminderEmail } from "../utils/send-email.js";
+import { sendReminderEmail } from "../utils/send-email.js";
 
 const REMINDERS=[7,5,2,1];
 
 export const sendReminder=serve(async (context)=>{
     const {subscriptionId}=context.requestPayload;
     const subscription=await fetchSubscription(context,subscriptionId);
+    
 
     if(! subscription || subscription.status !== "Active") return;
 
@@ -37,7 +38,7 @@ export const sendReminder=serve(async (context)=>{
 
 const fetchSubscription=async(context, subscriptionId)=>{
     return await context.run("get subscription", async()=>{
-        return await subscriptionModel.findById(subscriptionId).populate("user","userName, email")
+        return await subscriptionModel.findById(subscriptionId).populate("user","userName email")
     })
 }
 
@@ -50,8 +51,12 @@ const sleepUntilReminder=async(context, label, date)=>{
 
 const triggerReminder=async(context,label, subscription)=>{
     await context.run(label, async()=>{
-        console.log(`${label} day left please renewal you subscription`);
+      
 
-       
+       await sendReminderEmail({
+        to: subscription.user.email,
+        type: label,
+        subscription
+       })
     })
 }
