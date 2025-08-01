@@ -37,7 +37,7 @@ This project is a backend service for a real-world **SaaS subscription system**,
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/subscription-tracker.git
+git clone git@github.com:AliyanA1/subscription-tracker.git
 cd subscription-tracker
 
 ```
@@ -72,13 +72,4 @@ npm run dev
 📄 License
 This project is currently private and intended for learning & personal use. Licensing terms may change when the project is completed.
 
-
----
-
-Let me know when you'd like help with:
-- Creating Swagger or Postman API documentation
-- Writing integration tests
-- Setting up Docker or CI/CD for deployment
-
-I’ll help make this project production-grade step by step.
 
