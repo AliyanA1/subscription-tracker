@@ -1,38 +1,84 @@
-# Subscription Management System (In Progress)
+# 📦 Subscription Management System
 
-This project is all about building a **production-ready Subscription Management System** with:
+> A secure, production-ready backend for managing user subscriptions, payments, and automated workflows.
 
-- Real users
-- Real money
-- Real business logic
-
-The goal is to create a backend that can securely handle subscriptions, payments, and user management for a real-world SaaS product.
-
-## What I’m Learning and Building
-
-- **JWT Authentication** – Secure user login and token management.
-- **Database Modeling** – Designing schemas for users, subscriptions, and payments.
-- **API Architecture** – RESTful API design for handling subscriptions and workflows.
-- **Security** – Implementing best practices for authentication, authorization, and data protection.
-- **Automated Workflows** – Reminder systems, subscription renewals, and notifications.
-- **Email Integration** – Sending automated emails to users.
-
-## Tech Stack
-
-- **Node.js & Express** – Backend server.
-- **MongoDB** – Database for users and subscriptions.
-- **JWT** – For authentication and session management.
-- **Bcrypt** – For secure password hashing.
-
-## Status
-
-🚧 **This project is currently in development**.  
-I’m actively working on:
-
-- Authentication & Authorization
-- Subscription APIs
-- Reminder workflows & email sending
+This project is a backend service for a real-world **SaaS subscription system**, designed with scalability, security, and extensibility in mind.
 
 ---
 
-Stay tuned for updates as I progress through building this system into a fully production-ready backend!
+## 🧠 Key Features
+
+- ✅ **JWT Authentication** for user sessions
+- ✅ **MongoDB** schema design for users, subscriptions, and payments
+- ✅ **RESTful API** architecture
+- ✅ **Role-based Access Control (RBAC)**
+- ✅ **Email Reminders** via QStash + Nodemailer
+- ✅ **Rate-limiting & Security** via Arcjet
+- ✅ **.env environment support** for development & production
+
+---
+
+## 🛠 Tech Stack
+
+| Technology    | Purpose                              |
+|---------------|--------------------------------------|
+| Node.js + Express | Backend framework                 |
+| MongoDB       | Database for user & subscription data |
+| JWT           | Authentication tokens                |
+| Bcrypt        | Secure password hashing              |
+| Arcjet        | Protection & rate limiting           |
+| QStash (Upstash) | Scheduled email jobs               |
+| Nodemailer    | Email sending                        |
+
+---
+
+## 📁 Project Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/subscription-tracker.git
+cd subscription-tracker
+
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+Create two environment files:
+
+`.env.development.local`
+
+`.env.production.local`
+
+Start by copying from the example:
+
+```bash
+cp .env.example
+```
+
+### 4. Running Locally Start QStash (for email reminders) in a separate terminal:  
+
+```bash
+npx @upstash/qstash-cli dev
+
+npm run dev
+```
+
+📄 License
+This project is currently private and intended for learning & personal use. Licensing terms may change when the project is completed.
+
+
+---
+
+Let me know when you'd like help with:
+- Creating Swagger or Postman API documentation
+- Writing integration tests
+- Setting up Docker or CI/CD for deployment
+
+I’ll help make this project production-grade step by step.
+
