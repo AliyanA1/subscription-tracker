@@ -37,7 +37,7 @@ This project is a backend service for a real-world **SaaS subscription system**,
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/subscription-tracker.git
+git clone git@github.com:AliyanA1/subscription-tracker.git
 cd subscription-tracker
 
 ```
