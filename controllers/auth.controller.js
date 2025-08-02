@@ -70,3 +70,12 @@ export const signIn=async(req,res)=>{
   }
 
 }
+
+export const signOut=(req,res)=>{
+  res.clearCookie('token');
+  res.status(200).json({
+      
+    status: "success",
+    message: "you Sign Out successfuly"
+  })
+}
