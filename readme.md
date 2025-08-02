@@ -18,6 +18,15 @@ This project is a backend service for a real-world **SaaS subscription system**,
 
 ---
 
+## Routes
+
+### 🔐 Auth Routes
+
+- `POST /api/v1/auth/signUp` – Create a new user account  
+- `POST /api/v1/auth/signIn` – Log in to an existing account  
+- `GET /api/v1/auth/signOut` – Log out from the account  
+
+
 ## 🛠 Tech Stack
 
 | Technology    | Purpose                              |
