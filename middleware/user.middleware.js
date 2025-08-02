@@ -7,7 +7,7 @@ export const userMiddleware = (req, res, next) => {
   if (!token) {
     return res.status(401).json({
       status: "failed",
-      message: "No token provided, not authenticated"
+      message: "No token provided, not authenticated, you need to signIn first"
     });
   }
 
