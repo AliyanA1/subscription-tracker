@@ -1,6 +1,8 @@
 import { emailTemplates } from "./email-template.js"
 import dayjs from "dayjs";
-import { transporter,accountEmail } from "../config/nodemailer.js";
+import { transporter } from "../config/nodemailer.js";
+import { ACCOUNT_EMAIL } from "../config/envConfig.js";
+
 
 export const sendReminderEmail=async({to, type, subscription})=>{
    
@@ -23,7 +25,7 @@ export const sendReminderEmail=async({to, type, subscription})=>{
   const subject=template.generateSubject(mailInfo);
 
   const mailOption={
-    from: accountEmail,
+    from: ACCOUNT_EMAIL,
     to,
     subject,
     html:message
