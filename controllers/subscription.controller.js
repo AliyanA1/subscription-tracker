@@ -55,3 +55,30 @@ export const allSubscription=(req,res)=>{
      })
    }
 }
+
+
+// user subscription details
+export const userSubscriptions=async(req,res)=>{
+  try {
+   const {id}=req.params;
+
+   const usersSubDetails=await subscriptionModel
+   .find({user: id})
+   .populate('user', 'userName email')
+
+  
+
+   res.status(200).json({
+    status: "success",
+     message: `Here is the details of user subscription & user subscribed ${usersSubDetails.length} subscriptions`,
+    data: usersSubDetails
+   })
+
+  } catch (error) {
+    res.status(400).json({
+      status: "faild",
+      message: error.message
+    })
+  }
+
+}
