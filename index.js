@@ -29,7 +29,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/workflows", workFlow)
 
 app.listen(PORT, async()=>{
-    console.log(`server is listen on the Port:http://localhost:${3000}`)
+    console.log(`server is listen on the Port:http://localhost:${PORT}`)
 
     await mongooseConection();
 })
