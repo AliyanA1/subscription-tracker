@@ -1,6 +1,12 @@
 import aj from "../config/arcjet.js";
 
 const arcjetMiddleware=async(req,res,next)=>{
+      const userAgent = req.headers['user-agent'];
+
+    // Bypass Arcjet for Postman or local development
+    if (userAgent && userAgent.includes('Postman')) {
+      return next();
+    }
     try {
         const desicion=await aj.protect(req, {requested:1});
 
