@@ -82,3 +82,48 @@ export const userSubscriptions=async(req,res)=>{
   }
 
 }
+
+
+//cancel subscription
+export const cancelSubscription=async(req,res)=>{
+
+
+   try {
+    const findSubscription=await subscriptionModel.findByIdAndDelete(req.params.id);
+
+   if(!findSubscription) return res.send("invaild subscription id");
+
+   res.status(200).json({
+    status: "deleted sucessfuly",
+    "deletedSubscription": findSubscription
+     
+  })
+  } catch (error) {
+     res.status(200).json({
+     status: "faild,Error",
+     message: error.message
+     
+   })
+  }
+}
+
+//update the subscription
+export const updateSubscription=async(req,res)=>{
+  const body=req.body;
+  try {
+    const update=await subscriptionModel.findByIdAndUpdate(req.params.id, {...body},{new:true})
+    
+    if(!update) return res.send("error in updating the subscription");
+
+    res.status(200).json({
+      status: "success,  upadated the subscription",
+      update
+    })
+
+  } catch (error) {
+    res.status(400).json({
+      status: "faild, in upadating the subscription",
+      message: error.message
+    })
+  }
+}
