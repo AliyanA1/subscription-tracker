@@ -89,3 +89,20 @@ This project is a backend-only RESTful API for tracking user subscriptions. It a
 
 
 
+-------------------------------------------------------------------------------
+## 🔐 User Routes
+> All user routes under: `/api/v1/users`
+
+### ✅ `GET /` – Get all users
+**Description**: Retrieves all users, accessible only to admins.
+
+
+### ✅ `GET /:id` – Get a user  by its ID
+**Description**: Retrieves a specific user by their ID only to admins.
+
+
+### ✅ `PUT /:id` – Cancel a user's subscription by its subscription ID
+**Description**: Cancels a specific user's subscription by their ID only to admins.
+
+### ✅ `DELETE /:id` – Delete a user by its's ID
+**Description**: Deletes a user and their subscription details by their ID, accessible only to admins.
