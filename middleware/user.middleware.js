@@ -55,7 +55,7 @@ export const adminMiddleware=(req,res,next)=>{
     }
     req.user = userData; 
 
-    if(userData.role == "admin"){
+    if(userData.role === "admin"){
      return next();
     }
     res.status(400).json({
