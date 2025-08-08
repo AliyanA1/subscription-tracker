@@ -6,7 +6,7 @@ import { JWT_SECRET } from "../config/envConfig.js";
 
 export const signUp=async(req,res)=>{
   try {
-    const {userName, email, password}=req.body;
+    const {userName, email, password,role}=req.body;
 
   const check=await userModel.findOne({email});
   if(check){
@@ -17,7 +17,7 @@ export const signUp=async(req,res)=>{
    const salt=await bcrypt.genSalt(10);
    const hashPassword=await bcrypt.hash(password, salt)
 
-  const data=await userModel.create({ userName, email, password: hashPassword });
+  const data=await userModel.create({ userName, email, password: hashPassword ,role});
    
   const payload={id:data._id, email:data.email, role: data.role}
   const token=jwt.sign(payload, JWT_SECRET,{expiresIn: "1h"});

@@ -1,18 +1,21 @@
 import { Router } from "express";
-import { getAllUsers, getAUser } from "../controllers/user.controller.js";
-import { adminMiddleware, userMiddleware } from "../middleware/user.middleware.js";
+import { cancelUserSubscription, deleteAUser, getAllUsers, getAUser } from "../controllers/user.controller.js";
+import { adminMiddleware } from "../middleware/user.middleware.js";
 
 const userRouter=Router();
+userRouter.use(adminMiddleware);
 
-userRouter.get("/",adminMiddleware,getAllUsers);
+//for getting all the users details
+userRouter.get("/",getAllUsers);
 
-userRouter.get("/:id",userMiddleware,getAUser);
+//for getting the specific user details
+userRouter.get("/:id",getAUser);
 
-userRouter.post("/",(req,res)=> res.send("create new user"));
+// for canceling the  user specific subscription
+userRouter.put("/:id",cancelUserSubscription)
 
-userRouter.put("/",(req,res)=> res.send("update the user"));
-
-userRouter.delete("/",(req,res)=> res.send("delete  the user"))
+//for deleting the user all its details and its subscrition details only access for admin
+userRouter.delete("/:id",deleteAUser)
 
 
 
