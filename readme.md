@@ -74,7 +74,25 @@ npx @upstash/qstash-cli dev
 
 npm run dev
 ```
+------------------------------------------------------------------------------
 
+---
+
+## 🐛 Found a Bug?
+
+> “If you find a bug in this project, congratulations — you're now a developer.”
+
+![bug-fix-meme](https://i.imgflip.com/4/4t0m5.jpg)
+
+Feel free to:
+- 🛠️ Fix it
+- 🔁 Open a pull request
+- 💬 Or create an issue — so we can squash it together
+
+Your contributions are welcome and appreciated!
+
+
+------------------------------------------------------------------------------
 📄 License
 This project is currently private and intended for learning & personal use. Licensing terms may change when the project is completed.
 
